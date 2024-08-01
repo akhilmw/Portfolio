@@ -36,7 +36,7 @@ const Homepage = () => {
           {/* BUTTONS */}
           <div className="w-full flex gap-4">
             <a
-              href="/resume.pdf"
+              href="/Akhil_Resume.pdf"
               download
               className="flex items-center hover:bg-slate-600 justify-center p-4 rounded-lg ring-1 ring-black bg-black text-white"
             >
