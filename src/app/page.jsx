@@ -21,17 +21,14 @@ const Homepage = () => {
         {/* TEXT CONTAINER */}
         <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
           {/* TITLE */}
-          <h1 className="text-4xl md:text-6xl font-bold">
-            Coding with Purpose, Innovating with Passion.
+          <h1 className="text-2xl md:text-4xl font-bold">
+          Engineer <span className="font-normal">|</span> Musician <span className="font-normal">|</span> Gamer <span className="font-normal">|</span> Traveler
           </h1>
           {/* DESC */}
           <p className="md:text-xl">
-            Step into my world of software engineering, where passion for coding
-            and a flair for creativity come together. As a professional in the
-            field and a current master&rsquo;s student at UIC, I am dedicated to
-            developing cutting-edge solutions that push the boundaries of
-            technology. My portfolio is a showcase of my journey, skills, and
-            projects that reflect my commitment to excellence.
+          I'm <span className="font-bold">Akhil S Nair</span>, a software engineer and CS master's student at UIC. I recently worked at Amazon Web Services on the Aurora Serverless Control Plane team, 
+          tackling large-scale configuration management challenges. Beyond code, I bring the same creativity I use in music, gaming, and travel into building scalable, 
+          innovative software solutions — blending logic, artistry, and curiosity.
           </p>
           {/* BUTTONS */}
           <div className="w-full flex gap-4">

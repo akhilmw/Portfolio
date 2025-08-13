@@ -17,6 +17,30 @@ const AboutPage = () => {
   const experienceRef = useRef();
   const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
 
+  // Skills data organized by categories
+  const skillsByCategory = {
+    "Programming Languages": [
+      "Java", "Python", "JavaScript", "Groovy", "C++", "C#", "SQL", "Scala", "HTML", "CSS"
+    ],
+    "Frameworks & Libraries": [
+      "React.js", "Next.js", "Angular", "Node.js", "Express.js", "Spring Boot", "Grails",
+      "Material-UI", "Tailwind CSS", "Passport.js", "Jest", "Axios", "Apollo Client",
+      "Apache Spark", "Hive", "Hadoop", "MapReduce", "Kafka", "TensorFlow"
+    ],
+    "Cloud & DevOps": [
+      "AWS", "GCP", "Docker", "Kubernetes", "Git", "GitHub", "GitLab", "Artifactory", "CI/CD"
+    ],
+    "Databases": [
+      "MySQL", "Oracle Database", "MongoDB", "Postgres", "Redis", "Elasticsearch"
+    ],
+    "APIs & Protocols": [
+      "REST", "GraphQL", "OpenAI Whisper API", "Xenova"
+    ],
+    "Developer Tools": [
+      "VS Code", "PyCharm", "IntelliJ IDEA", "Linux", "SQS", "SDLC", "Data Structures & Algorithms"
+    ]
+  };  
+
   return (
     <motion.div
       className="h-full"
@@ -42,14 +66,17 @@ const AboutPage = () => {
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
             <p className="text-lg">
-            Hi, I&apos;m Akhil S Nair, a Software Engineer and a master&apos;s student
-              in computer science at UIC. Born and raised in India, I&apos;ve traded
-              the vibrant spices of home for the world of algorithms and
-              innovation here in the US. Outside the digital realm, I&apos;m either
-              jamming on my guitar, engaging in tactical mayhem in Rainbow Six
-              Siege (I like my peace with a side of chaos), or striving to
-              balance cricket and gym sessions as a wannabe fitness guru. Here&apos;s
-              to mixing passion with a dash of fun!
+            Hi, I'm Akhil S Nair, a Software Engineer and a master's student
+  in Computer Science at UIC. I recently completed my Summer 2025
+  internship with the Aurora Serverless v2 team
+  at Amazon Web Services, where I worked on large-scale configuration
+  management migration for Aurora. Born and raised in India, I've
+  traded the vibrant spices of home for the challenges of cloud
+  computing, distributed systems, and AI-driven solutions here in the US.
+  Outside the digital realm, I'm either jamming on my guitar, engaging
+  in tactical mayhem in Rainbow Six Siege (chaos, but make it strategic),
+  or balancing cricket and gym sessions in my ongoing quest to be a
+  fitness enthusiast. Here's to mixing passion with a dash of fun!
             </p>
             {/* BIOGRAPHY QUOTE */}
             <span className="italic block mb-2">
@@ -107,80 +134,27 @@ const AboutPage = () => {
             <motion.div
               initial={{ x: "-300px" }}
               animate={isSkillRefInView ? { x: 0 } : {}}
-              className="flex gap-4 flex-wrap"
+              className="space-y-8"
             >
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                JavaScript
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Java
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Python
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Groovy
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                C++
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                React.js
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Next.js
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                JQuery
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Tailwind CSS
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Express.js
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Spring Boot
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Grails
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Node.js
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                GraphQL
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Apollo
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                MongoDB
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                MYSQLdb
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Oracle Database
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Vite
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Docker
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                AWS
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Jenkins
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Firebase
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Git
-              </div>
+              {Object.entries(skillsByCategory).map(([category, skills], categoryIndex) => (
+                <div key={categoryIndex} className="space-y-4">
+                  {/* Category Heading */}
+                  <h3 className="text-lg font-semibold text-gray-700 border-b-2 border-gray-300 pb-2">
+                    {category}
+                  </h3>
+                  {/* Skills in this category */}
+                  <div className="flex gap-3 flex-wrap">
+                    {skills.map((skill, skillIndex) => (
+                      <div
+                        key={`${categoryIndex}-${skillIndex}`}
+                        className="rounded-lg px-3 py-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black transition-all duration-200 hover:scale-105 shadow-sm"
+                      >
+                        {skill}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </motion.div>
             {/* SKILL SCROLL SVG */}
             <motion.svg
@@ -224,109 +198,147 @@ const AboutPage = () => {
             <motion.div
               initial={{ x: "-300px" }}
               animate={isExperienceRefInView ? { x: "0" } : {}}
-              className=""
+              className="relative"
             >
-              {/* EXPERIENCE LIST ITEM */}
-              <div className="flex justify-between h-48">
-                {/* LEFT */}
-                <div className="w-1/3 ">
-                  {/* JOB TITLE */}
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Associate Software Engineer II
+              {/* Timeline line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-600 rounded"></div>
+              
+              {/* AWS Experience - Latest */}
+              <div className="relative mb-16">
+                <div className="flex items-center justify-between">
+                  {/* LEFT SIDE - Content */}
+                  <div className="w-5/12 pr-8 text-right">
+                    {/* JOB TITLE */}
+                    <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg shadow-sm">
+                      Software Development Engineer Intern
+                    </div>
+                    {/* JOB DESC */}
+                    <div className="p-3 text-sm italic">
+                    Software Engineering Intern on the Aurora Serverless v2 – Placement Service team at AWS, migrating config management from DynamoDB to CreaMPuff (CMP), reducing manual updates by 90% and achieving 100% accuracy in rollout.
+                    </div>
+                    {/* JOB DATE */}
+                    <div className="p-3 text-red-400 text-sm font-semibold">
+                      May 2025 - Aug 2025
+                    </div>
+                    {/* JOB COMPANY */}
+                    <div className="p-1 rounded bg-white text-sm font-semibold w-fit shadow-sm ml-auto">
+                      Amazon Web Services (AWS)
+                    </div>
                   </div>
-                  {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">
-                    Implemented new features and fixed system bugs. Notably,
-                    integrated WHO and KOREA MFDS Dictionaries, boosting
-                    performance by 15% and reducing load times.{" "}
+                  
+                  {/* CENTER - Timeline dot */}
+                  <div className="w-2/12 flex justify-center">
+                    <div className="w-5 h-5 rounded-full ring-4 ring-red-400 bg-white z-10 relative"></div>
                   </div>
-                  {/* JOB DATE */}
-                  <div className="p-3 text-red-400 text-sm font-semibold">
-                    Jan 2023 - May 2024
-                  </div>
-                  {/* JOB COMPANY */}
-                  <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                    RxLogix Corporation
-                  </div>
-                </div>
-                {/* CENTER */}
-                <div className="w-1/6 flex justify-center">
-                  {/* LINE */}
-                  <div className="w-1 h-full bg-gray-600 rounded relative">
-                    {/* LINE CIRCLE */}
-                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
-                  </div>
-                </div>
-                {/* RIGHT */}
-                <div className="w-1/3 "></div>
-              </div>
-              {/* EXPERIENCE LIST ITEM */}
-              <div className="flex justify-between h-48">
-                {/* LEFT */}
-                <div className="w-1/3 "></div>
-                {/* CENTER */}
-                <div className="w-1/6 flex justify-center">
-                  {/* LINE */}
-                  <div className="w-1 h-full bg-gray-600 rounded relative">
-                    {/* LINE CIRCLE */}
-                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
-                  </div>
-                </div>
-                {/* RIGHT */}
-                <div className="w-1/3 ">
-                  {/* JOB TITLE */}
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Associate Software Engineer I
-                  </div>
-                  {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">
-                    Worked in the PVCM CE team, addressing client-reported bugs
-                    with quick fixes. Implemented an automated email case intake
-                    system.{" "}
-                  </div>
-                  {/* JOB DATE */}
-                  <div className="p-3 text-red-400 text-sm font-semibold">
-                    Nov 2021 - Jan 2023{" "}
-                  </div>
-                  {/* JOB COMPANY */}
-                  <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                    RxLogix Corporation
-                  </div>
+                  
+                  {/* RIGHT SIDE - Empty */}
+                  <div className="w-5/12"></div>
                 </div>
               </div>
-              {/* EXPERIENCE LIST ITEM */}
-              <div className="flex justify-between h-48">
-                {/* LEFT */}
-                <div className="w-1/3 ">
-                  {/* JOB TITLE */}
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Software Engineer Intern{" "}
+
+              {/* RxLogix Associate Software Engineer II */}
+              <div className="relative mb-16">
+                <div className="flex items-center justify-between">
+                  {/* LEFT SIDE - Empty */}
+                  <div className="w-5/12"></div>
+                  
+                  {/* CENTER - Timeline dot */}
+                  <div className="w-2/12 flex justify-center">
+                    <div className="w-5 h-5 rounded-full ring-4 ring-red-400 bg-white z-10 relative"></div>
                   </div>
-                  {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">
-                    Used Python’s Selenium and Beautiful Soup to scrape data,
-                    increasing the product base by 40%. Implemented a ReactJS
-                    demo request process to enhance user experience.{" "}
-                  </div>
-                  {/* JOB DATE */}
-                  <div className="p-3 text-red-400 text-sm font-semibold">
-                    Jan 2021 - Jul 2021{" "}
-                  </div>
-                  {/* JOB COMPANY */}
-                  <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                    Cognetry Labs Inc.
+                  
+                  {/* RIGHT SIDE - Content */}
+                  <div className="w-5/12 pl-8">
+                    {/* JOB TITLE */}
+                    <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg shadow-sm">
+                      Associate Software Engineer II
+                    </div>
+                    {/* JOB DESC */}
+                    <div className="p-3 text-sm italic">
+                      Implemented new features and fixed system bugs. Notably,
+                      integrated WHO and KOREA MFDS Dictionaries, boosting
+                      performance by 15% and reducing load times.
+                    </div>
+                    {/* JOB DATE */}
+                    <div className="p-3 text-red-400 text-sm font-semibold">
+                      Jan 2023 - May 2024
+                    </div>
+                    {/* JOB COMPANY */}
+                    <div className="p-1 rounded bg-white text-sm font-semibold w-fit shadow-sm">
+                      RxLogix Corporation
+                    </div>
                   </div>
                 </div>
-                {/* CENTER */}
-                <div className="w-1/6 flex justify-center">
-                  {/* LINE */}
-                  <div className="w-1 h-full bg-gray-600 rounded relative">
-                    {/* LINE CIRCLE */}
-                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+              </div>
+
+              {/* RxLogix Associate Software Engineer I */}
+              <div className="relative mb-16">
+                <div className="flex items-center justify-between">
+                  {/* LEFT SIDE - Content */}
+                  <div className="w-5/12 pr-8 text-right">
+                    {/* JOB TITLE */}
+                    <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg shadow-sm">
+                      Associate Software Engineer I
+                    </div>
+                    {/* JOB DESC */}
+                    <div className="p-3 text-sm italic">
+                      Worked in the PVCM CE team, addressing client-reported bugs
+                      with quick fixes. Implemented an automated email case intake
+                      system.
+                    </div>
+                    {/* JOB DATE */}
+                    <div className="p-3 text-red-400 text-sm font-semibold">
+                      Nov 2021 - Jan 2023
+                    </div>
+                    {/* JOB COMPANY */}
+                    <div className="p-1 rounded bg-white text-sm font-semibold w-fit shadow-sm ml-auto">
+                      RxLogix Corporation
+                    </div>
+                  </div>
+                  
+                  {/* CENTER - Timeline dot */}
+                  <div className="w-2/12 flex justify-center">
+                    <div className="w-5 h-5 rounded-full ring-4 ring-red-400 bg-white z-10 relative"></div>
+                  </div>
+                  
+                  {/* RIGHT SIDE - Empty */}
+                  <div className="w-5/12"></div>
+                </div>
+              </div>
+
+              {/* Cognetry Labs Intern */}
+              <div className="relative mb-16">
+                <div className="flex items-center justify-between">
+                  {/* LEFT SIDE - Empty */}
+                  <div className="w-5/12"></div>
+                  
+                  {/* CENTER - Timeline dot */}
+                  <div className="w-2/12 flex justify-center">
+                    <div className="w-5 h-5 rounded-full ring-4 ring-red-400 bg-white z-10 relative"></div>
+                  </div>
+                  
+                  {/* RIGHT SIDE - Content */}
+                  <div className="w-5/12 pl-8">
+                    {/* JOB TITLE */}
+                    <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg shadow-sm">
+                      Software Engineer Intern
+                    </div>
+                    {/* JOB DESC */}
+                    <div className="p-3 text-sm italic">
+                      Used Python's Selenium and Beautiful Soup to scrape data,
+                      increasing the product base by 40%. Implemented a ReactJS
+                      demo request process to enhance user experience.
+                    </div>
+                    {/* JOB DATE */}
+                    <div className="p-3 text-red-400 text-sm font-semibold">
+                      Jan 2021 - Jul 2021
+                    </div>
+                    {/* JOB COMPANY */}
+                    <div className="p-1 rounded bg-white text-sm font-semibold w-fit shadow-sm">
+                      Cognetry Labs Inc.
+                    </div>
                   </div>
                 </div>
-                {/* RIGHT */}
-                <div className="w-1/3 "></div>
               </div>
             </motion.div>
             <div className="flex justify-center pt-8">
