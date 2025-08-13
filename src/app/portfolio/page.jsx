@@ -5,6 +5,88 @@ import Link from "next/link";
 import { useRef } from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
+// Project Card Component
+const ProjectCard = ({ item, index }) => {
+  const ref = useRef();
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 100 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+    >
+      {/* Project Card */}
+      <div className={`relative h-96 bg-gradient-to-br ${item.color} p-6 flex flex-col justify-between`}>
+        {/* Project Image */}
+        <div className="relative w-full h-48 rounded-lg overflow-hidden mb-4">
+          <Image 
+            src={item.img} 
+            alt={item.title}
+            fill
+            className="object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-0 transition-all duration-300" />
+        </div>
+
+        {/* Project Content */}
+        <div className="flex-1 flex flex-col">
+          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-gray-100 transition-colors">
+            {item.title}
+          </h3>
+          
+          <p className="text-white text-sm leading-relaxed mb-4 flex-1 line-clamp-3">
+            {item.desc}
+          </p>
+
+          {/* Tech Stack */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {item.tech.map((tech, techIndex) => (
+              <span
+                key={techIndex}
+                className="px-2 py-1 bg-white bg-opacity-20 text-white text-xs rounded-full backdrop-blur-sm"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex gap-3">
+            <Link
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1"
+            >
+              <button className="w-full px-4 py-2 bg-white text-gray-800 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2 text-sm">
+                <FaExternalLinkAlt className="text-xs" />
+                Live Demo
+              </button>
+            </Link>
+            
+            {item.githubLink && (
+              <Link
+                href={item.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1"
+              >
+                <button className="w-full px-4 py-2 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center gap-2 text-sm">
+                  <FaGithub className="text-sm" />
+                  Code
+                </button>
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 const items = [
   {
     id: 1,
@@ -140,87 +222,9 @@ const PortfolioPage = () => {
       {/* Projects Grid */}
       <div className="container mx-auto px-4 py-16" ref={containerRef}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-          {items.map((item, index) => {
-            const ref = useRef();
-            const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-            return (
-              <motion.div
-                key={item.id}
-                ref={ref}
-                initial={{ opacity: 0, y: 100 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-              >
-                {/* Project Card */}
-                <div className={`relative h-96 bg-gradient-to-br ${item.color} p-6 flex flex-col justify-between`}>
-                  {/* Project Image */}
-                  <div className="relative w-full h-48 rounded-lg overflow-hidden mb-4">
-                    <Image 
-                      src={item.img} 
-                      alt={item.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-0 transition-all duration-300" />
-                  </div>
-
-                  {/* Project Content */}
-                  <div className="flex-1 flex flex-col">
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-gray-100 transition-colors">
-                      {item.title}
-                    </h3>
-                    
-                    <p className="text-white text-sm leading-relaxed mb-4 flex-1 line-clamp-3">
-                      {item.desc}
-                    </p>
-
-                    {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {item.tech.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-1 bg-white bg-opacity-20 text-white text-xs rounded-full backdrop-blur-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex gap-3">
-                      <Link
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1"
-                      >
-                        <button className="w-full px-4 py-2 bg-white text-gray-800 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2 text-sm">
-                          <FaExternalLinkAlt className="text-xs" />
-                          Live Demo
-                        </button>
-                      </Link>
-                      
-                      {item.githubLink && (
-                        <Link
-                          href={item.githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1"
-                        >
-                          <button className="w-full px-4 py-2 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center gap-2 text-sm">
-                            <FaGithub className="text-sm" />
-                            Code
-                          </button>
-                        </Link>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+          {items.map((item, index) => (
+            <ProjectCard key={item.id} item={item} index={index} />
+          ))}
         </div>
       </div>
 

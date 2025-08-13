@@ -26,7 +26,7 @@ const Homepage = () => {
           </h1>
           {/* DESC */}
           <p className="md:text-xl">
-          I'm <span className="font-bold">Akhil S Nair</span>, a software engineer and CS master's student at UIC. I recently worked at Amazon Web Services on the Aurora Serverless Control Plane team, 
+          I&apos;m <span className="font-bold">Akhil S Nair</span>, a software engineer and CS master&apos;s student at UIC. I recently worked at Amazon Web Services on the Aurora Serverless Control Plane team, 
           tackling large-scale configuration management challenges. Beyond code, I bring the same creativity I use in music, gaming, and travel into building scalable, 
           innovative software solutions — blending logic, artistry, and curiosity.
           </p>

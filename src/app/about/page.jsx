@@ -66,17 +66,17 @@ const AboutPage = () => {
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
             <p className="text-lg">
-            Hi, I'm Akhil S Nair, a Software Engineer and a master's student
+            Hi, I&apos;m Akhil S Nair, a Software Engineer and a master&apos;s student
   in Computer Science at UIC. I recently completed my Summer 2025
   internship with the Aurora Serverless v2 team
   at Amazon Web Services, where I worked on large-scale configuration
-  management migration for Aurora. Born and raised in India, I've
+  management migration for Aurora. Born and raised in India, I&apos;ve
   traded the vibrant spices of home for the challenges of cloud
   computing, distributed systems, and AI-driven solutions here in the US.
-  Outside the digital realm, I'm either jamming on my guitar, engaging
+  Outside the digital realm, I&apos;m either jamming on my guitar, engaging
   in tactical mayhem in Rainbow Six Siege (chaos, but make it strategic),
   or balancing cricket and gym sessions in my ongoing quest to be a
-  fitness enthusiast. Here's to mixing passion with a dash of fun!
+  fitness enthusiast. Here&apos;s to mixing passion with a dash of fun!
             </p>
             {/* BIOGRAPHY QUOTE */}
             <span className="italic block mb-2">
@@ -88,11 +88,11 @@ const AboutPage = () => {
             </span>
             {/* BIOGRAPHY SIGN SVG*/}
             <div className="self-end">
-              <img
+              <Image
                 src="/signature.svg"
-                alt="Example SVG"
-                width="250"
-                height="88"
+                alt="Signature"
+                width={250}
+                height={88}
               />
             </div>
             {/* BIOGRAPHY SCROLL SVG */}
@@ -325,7 +325,7 @@ const AboutPage = () => {
                     </div>
                     {/* JOB DESC */}
                     <div className="p-3 text-sm italic">
-                      Used Python's Selenium and Beautiful Soup to scrape data,
+                      Used Python&apos;s Selenium and Beautiful Soup to scrape data,
                       increasing the product base by 40%. Implemented a ReactJS
                       demo request process to enhance user experience.
                     </div>
