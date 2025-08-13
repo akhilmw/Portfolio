@@ -16,12 +16,12 @@ const ProjectCard = ({ item, index }) => {
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+      className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 sm:hover:-translate-y-2"
     >
       {/* Project Card */}
-      <div className={`relative h-96 bg-gradient-to-br ${item.color} p-6 flex flex-col justify-between`}>
+      <div className={`relative h-80 sm:h-96 bg-gradient-to-br ${item.color} p-4 sm:p-6 flex flex-col justify-between`}>
         {/* Project Image */}
-        <div className="relative w-full h-48 rounded-lg overflow-hidden mb-4">
+        <div className="relative w-full h-32 sm:h-48 rounded-lg overflow-hidden mb-3 sm:mb-4">
           <Image 
             src={item.img} 
             alt={item.title}
@@ -33,16 +33,16 @@ const ProjectCard = ({ item, index }) => {
 
         {/* Project Content */}
         <div className="flex-1 flex flex-col">
-          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-gray-100 transition-colors">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 group-hover:text-gray-100 transition-colors leading-tight">
             {item.title}
           </h3>
           
-          <p className="text-white text-sm leading-relaxed mb-4 flex-1 line-clamp-3">
+          <p className="text-white text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 flex-1 line-clamp-3">
             {item.desc}
           </p>
 
           {/* Tech Stack */}
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
             {item.tech.map((tech, techIndex) => (
               <span
                 key={techIndex}
@@ -54,14 +54,14 @@ const ProjectCard = ({ item, index }) => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
             <Link
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1"
             >
-              <button className="w-full px-4 py-2 bg-white text-gray-800 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2 text-sm">
+              <button className="w-full px-3 sm:px-4 py-2 bg-white text-gray-800 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2 text-xs sm:text-sm">
                 <FaExternalLinkAlt className="text-xs" />
                 Live Demo
               </button>
@@ -74,8 +74,8 @@ const ProjectCard = ({ item, index }) => {
                 rel="noopener noreferrer"
                 className="flex-1"
               >
-                <button className="w-full px-4 py-2 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center gap-2 text-sm">
-                  <FaGithub className="text-sm" />
+                <button className="w-full px-3 sm:px-4 py-2 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center gap-2 text-xs sm:text-sm">
+                  <FaGithub className="text-xs sm:text-sm" />
                   Code
                 </button>
               </Link>
@@ -181,12 +181,12 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       {/* Hero Section */}
-      <div className="w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center text-8xl text-center bg-gradient-to-r from-blue-100 to-purple-100 relative">
+      <div className="w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center text-8xl text-center bg-gradient-to-r from-blue-100 to-purple-100 relative px-4">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl lg:text-8xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-8"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6 sm:mb-8 leading-tight"
         >
           My Projects
         </motion.h1>
@@ -196,32 +196,32 @@ const PortfolioPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col items-center mt-8"
+          className="flex flex-col items-center mt-6 sm:mt-8"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="text-gray-600 text-sm font-medium mb-2"
+            className="text-gray-600 text-xs sm:text-sm font-medium mb-2"
           >
             Scroll to explore
           </motion.div>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-            className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
+            className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-gray-400 rounded-full flex justify-center"
           >
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-              className="w-1 h-3 bg-gray-400 rounded-full mt-2"
+              className="w-1 h-2 sm:h-3 bg-gray-400 rounded-full mt-1 sm:mt-2"
             />
           </motion.div>
         </motion.div>
       </div>
 
       {/* Projects Grid */}
-      <div className="container mx-auto px-4 py-16" ref={containerRef}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16" ref={containerRef}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {items.map((item, index) => (
             <ProjectCard key={item.id} item={item} index={index} />
           ))}
@@ -229,13 +229,13 @@ const PortfolioPage = () => {
       </div>
 
       {/* Call to Action Section */}
-      <div className="w-screen py-20 bg-gradient-to-r from-gray-900 to-gray-800">
-        <div className="container mx-auto px-4 text-center">
+      <div className="w-screen py-16 sm:py-20 bg-gradient-to-r from-gray-900 to-gray-800">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-8"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 leading-tight"
           >
             Liked my work?
           </motion.h2>
@@ -250,7 +250,7 @@ const PortfolioPage = () => {
               animate={{ rotate: 360 }}
               transition={{ duration: 20, ease: "linear", repeat: Infinity }}
               viewBox="0 0 300 300"
-              className="w-64 h-64 md:w-[400px] md:h-[400px]"
+              className="w-48 h-48 sm:w-64 sm:h-64 md:w-[400px] md:h-[400px]"
             >
               <defs>
                 <path
@@ -258,7 +258,7 @@ const PortfolioPage = () => {
                   d="M150,150 m-100,0 a100,100 0 1,1 200,0 a100,100 0 1,1 -200,0"
                 />
               </defs>
-              <text fill="#ffffff" fontSize="14" textLength="600">
+              <text fill="#ffffff" fontSize="12 sm:text-14" textLength="600">
                 <textPath xlinkHref="#circlePath" lengthAdjust="spacingAndGlyphs">
                   Full-Stack Developer • Backend Engineer • Problem Solver
                 </textPath>
@@ -267,7 +267,7 @@ const PortfolioPage = () => {
             
             <Link
               href="/contact"
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-white text-gray-900 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors duration-200 font-semibold text-sm md:text-base"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-white text-gray-900 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors duration-200 font-semibold text-xs sm:text-sm md:text-base"
             >
               Hire Me
             </Link>
