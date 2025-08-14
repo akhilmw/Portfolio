@@ -81,7 +81,7 @@ const Navbar = () => {
         <Link href="https://github.com/akhilmw" target="_blank" rel="noopener noreferrer">
           <Image src="/github.png" alt="" width={24} height={24} />
         </Link>
-        <Link href="https://www.linkedin.com/in/akhilr61999/" target="_blank" rel="noopener noreferrer">
+        <Link href="www.linkedin.com/in/akhilmw" target="_blank" rel="noopener noreferrer">
           <Image src="/linkedin.png" alt="" width={24} height={24} />
         </Link>
         <Link href="https://www.instagram.com/akhil_nair01" target="_blank" rel="noopener noreferrer">
